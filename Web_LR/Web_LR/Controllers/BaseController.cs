@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Threading;
 
 namespace Web_LR.Controllers
 {
+    [Omu.Awesome.Mvc.WhiteSpaceFilter]
     public class BaseController : Controller
     {
-        //
-        // GET: /Base/
-
-        public ActionResult Index()
+        public string ActualCulture
         {
-            return View();
+            get
+            {
+                return Thread.CurrentThread.CurrentCulture.ToString();
+            }
         }
-
     }
 }
