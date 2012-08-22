@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Smart Trading @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")?@DateTime.Now.Millisecond.ToString()" rel="stylesheet" type="text/css" />
+    <link rel="SHORTCUT ICON" href="@Url.Content("~/Content/images/icon.ico")" />
+    @RenderSection("Header", false)
+</head>
+<body>
+    <section id="adminContent">
+        @RenderBody()
+        @if (User.Identity.IsAuthenticated)
+        {                   
+            @Html.ActionLink("Odhlásit se", "Logoff", "Account")            
+        }
+    </section>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.20.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>
