@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Smarttrading_gb.Models.PageRoute>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";    
+}
+<h2>
+    Pages</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<p>
+    @Html.ActionLink("Nová stránka", "Create")
+</p>
+<div class="fields">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>                
+                @Html.DisplayFor(modelItem => item.PageName) |
+                @Html.DisplayFor(modelItem => item.Culture1.Culture1)
+                                
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+            </li>
+        }
+    </ul>
+</div>

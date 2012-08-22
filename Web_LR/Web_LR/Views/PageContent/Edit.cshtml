@@ -1,0 +1,71 @@
+﻿@model Smarttrading_gb.Models.PageContents
+@{    
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section Header{
+    @(Html.Telerik().StyleSheetRegistrar()
+                      .DefaultGroup(group => group
+                          .Add("telerik.common.css")
+                          .Add("telerik.windows7.css")
+                          .Add("telerik.rtl.css")
+                          )
+                     )
+}
+@section Scripts{
+    @(Html.Telerik().ScriptRegistrar()
+                     .DefaultGroup(group => group
+                    .Add("telerik.common.min.js")
+                    .Add("telerik.list.min.js")
+                    .Add("telerik.combobox.min.js")
+                    .Add("telerik.draganddrop.min.js")
+                    .Add("telerik.window.min.js")
+                    .Add("telerik.imagebrowser.min.js")
+                    .Add("telerik.upload.min.js")
+                    .Add("telerik.editor.min.js")
+                         )
+
+            )
+}
+<h2>
+    Page Content</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<br />
+<div>
+    <a href="/PageContent/Index/@Model.PageId">Zpět</a>    
+</div>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.PageId)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.PageType)
+
+    @Html.ValidationSummary(true)
+    
+    {
+        Html.Telerik().EditorFor(model => model.PageContent)
+               .FileBrowser(settings => settings
+               .Browse("Browse", "ImageBrowser")
+               .Thumbnail("Thumbnail", "ImageBrowser")
+               .Upload("Upload", "ImageBrowser")
+               .DeleteFile("DeleteFile", "ImageBrowser")
+               .DeleteDirectory("DeleteDirectory", "ImageBrowser")
+               .CreateDirectory("CreateDirectory", "ImageBrowser")
+           )
+         .Render();
+    }
+    
+    <div class="fields">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CssClass, "PageContentClasses")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CssClass", String.Empty)
+            @Html.ValidationMessageFor(model => model.CssClass)
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </div>
+}

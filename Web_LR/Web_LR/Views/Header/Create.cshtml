@@ -1,0 +1,48 @@
+﻿@model Smarttrading_gb.Models.Header
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
+}
+<h2>
+    Header</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+@using (Html.BeginForm())
+{
+    <div class="fields">
+        @Html.ValidationSummary(true)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsImage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsImage)
+            @Html.ValidationMessageFor(model => model.IsImage)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImagePath)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImagePath)
+            @Html.ValidationMessageFor(model => model.ImagePath)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageHref)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageHref)
+            @Html.ValidationMessageFor(model => model.ImageHref)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,34 @@
+﻿@model Smarttrading_gb.Models.PageContents
+@{    
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>
+    Page Content</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<div class="fields">
+    <h3>
+        Are you sure you want to delete this?</h3>
+    <div class="display-label">
+        PageContent</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PageContent)
+    </div>
+    <div class="display-label">
+        PageRoute</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PageRoute.PageAddress)
+    </div>
+    <div class="display-label">
+        PageContentClasses</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PageContentClasses.ClassName)
+    </div>
+    @using (Html.BeginForm())
+    {
+        <p>
+            <input type="submit" value="Delete" />
+            |<a href="/PageContent/Index/@Model.PageId">Zpět</a>
+        </p>
+    }
+</div>

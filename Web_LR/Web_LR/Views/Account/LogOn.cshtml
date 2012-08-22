@@ -1,0 +1,31 @@
+﻿@model Smarttrading_gb.Models.AccountModels.LogOnModel
+@{
+    ViewBag.Title = "Administrace";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>
+    Administrace</h2>
+@Html.ValidationSummary(true, "Přihlášení nebylo úspěšné.")
+@using (Html.BeginForm())
+{                       
+
+    <div class="fields">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <input type="submit" value="Přihlásit" class="LoginHyperLink" />
+    </div>     
+
+                
+}

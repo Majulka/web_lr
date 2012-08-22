@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Smarttrading_gb.Models.Culture>
+@{    
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>
+    Culture</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="fields">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.DisplayFor(modelItem => item.Culture1)
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+            </li>    
+                 
+        }
+    </ul>
+</div>

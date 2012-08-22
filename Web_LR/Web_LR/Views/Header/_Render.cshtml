@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Smarttrading_gb.Models.Header>
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    if (item.IsImage)
+    {
+        var imgPath = "~/Content/images/" + item.ImagePath;
+        <div class="@item.HeaderClasses.ClassName">
+        <img src="@Url.Content(imgPath)" alt="" />
+        </div>
+    }
+}

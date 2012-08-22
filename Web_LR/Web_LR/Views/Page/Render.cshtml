@@ -1,0 +1,24 @@
+﻿@model  List<Smarttrading_gb.Models.PageContents>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#mainContent .slider img').css('display', 'inline');
+            $('.slider').cycle({
+                fx: 'fade',
+                pause: 1
+            });
+
+            $('#mainContent .photogallery img').toggle(function () {
+                $(this).addClass('imgSelected');
+            }, function () {
+                $(this).removeClass('imgSelected');
+            });
+
+        });
+    </script>
+}
+@foreach (var item in Model)
+{
+    <div class="@item.PageContentClasses.ClassName">@Html.Raw(HttpUtility.HtmlDecode(item.PageContent))</div>    
+}

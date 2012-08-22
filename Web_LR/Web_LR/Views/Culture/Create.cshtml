@@ -1,0 +1,34 @@
+﻿@model Smarttrading_gb.Models.Culture
+@{    
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>
+    Culture</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<br />
+<div>
+    <a href="/Culture/Index">Zpět</a></div>
+@using (Html.BeginForm())
+{
+    <div class="fields">
+        @Html.ValidationSummary(true)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Culture1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Culture1)
+            @Html.ValidationMessageFor(model => model.Culture1)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CultureName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CultureName)
+            @Html.ValidationMessageFor(model => model.CultureName)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </div>
+}

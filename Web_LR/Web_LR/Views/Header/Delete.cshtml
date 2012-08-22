@@ -1,0 +1,40 @@
+﻿@model Smarttrading_gb.Models.Header
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
+}
+<h2>
+    Header</h2>
+    <div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<div class="fields">
+    <h3>
+        Are you sure you want to delete this?</h3>
+    <div class="display-label">
+        Text</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+    <div class="display-label">
+        IsImage</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsImage)
+    </div>
+    <div class="display-label">
+        ImagePath</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImagePath)
+    </div>
+    <div class="display-label">
+        ImageHref</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageHref)
+    </div>
+    @using (Html.BeginForm())
+    {
+        <p>
+            <input type="submit" value="Delete" />
+            |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+</div>

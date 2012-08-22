@@ -1,0 +1,25 @@
+﻿@model Smarttrading_gb.Models.Menu
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
+}
+<h2>
+    Menu</h2>
+    <div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<div class="fields">
+    <h3>
+        Are you sure you want to delete this?</h3>
+    
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    
+    @using (Html.BeginForm())
+    {
+        <p>
+            <input type="submit" value="Delete" />
+            |
+            <a href="/Menu/Index">Zpět</a>
+        </p>
+    }
+</div>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Smarttrading_gb.Models.PageContents>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";    
+}
+<h2>
+    Page Content</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+
+<div class="fields">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>                
+                @Html.DisplayFor(modelItem => item.PageContentClasses.ClassName) |
+                @Html.DisplayFor(modelItem => item.ChangeTime)
+                                                
+                @Html.ActionLink("Vrátit", "HistoryBack", new { id = item.Id }) 
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,69 @@
+﻿@model Smarttrading_gb.Models.Header
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
+}
+<h2>
+    Header</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<br />
+<div>
+    <a href="/Header/Index">Zpět</a>
+</div>
+@using (Html.BeginForm("Edit", "Header", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="fields">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.IsImage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsImage)
+            @Html.ValidationMessageFor(model => model.IsImage)
+        </div>*@
+        <div class="editor-label">
+            Logo
+        </div>
+        <div class="editor-field">
+            <input type="file" name="file" id="file" />
+        </div>
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.ImagePath)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImagePath)
+            @Html.ValidationMessageFor(model => model.ImagePath)
+        </div>*@ @*<div class="editor-label">
+            @Html.LabelFor(model => model.ImageHref)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageHref)
+            @Html.ValidationMessageFor(model => model.ImageHref)
+        </div>*@
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Culture)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Culture")
+            @Html.ValidationMessageFor(model => model.Culture)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Class)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Class")
+            @Html.ValidationMessageFor(model => model.Class)
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </div>
+}

@@ -1,0 +1,42 @@
+﻿@model Smarttrading_gb.Models.PageRoute
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; 
+}
+<h2>
+    Pages</h2>
+<div>
+    <a href="/Admin">Zpět na administraci</a></div>
+<br />
+<div>
+    <a href="/Page/Index">Zpět</a>
+</div>
+@using (Html.BeginForm())
+{
+    <div class="fields">
+        @Html.ValidationSummary(true)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PageAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PageAddress) (např. Produkty)
+            @Html.ValidationMessageFor(model => model.PageAddress)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PageName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PageName)
+            @Html.ValidationMessageFor(model => model.PageName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Culture, "Culture")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Culture", String.Empty)
+            @Html.ValidationMessageFor(model => model.Culture)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </div>
+}
