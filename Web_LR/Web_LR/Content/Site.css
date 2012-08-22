@@ -1,51 +1,439 @@
 html
 {
     width: 100%;
-}
-body
-{
-    font-size: .85em;
-    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
+    height: 100%;
 }
 
-header,
-footer,
-nav,
-section {
+body
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: .85em; /*font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;*/
+    font-family: "Segoe UI" , Frutiger, "Frutiger Linotype" , "Dejavu Sans" , "Helvetica Neue" , Verdana, Arial, sans-serif;
+    color: #232323;
+    background: #E2EEF1 url(images/bg-body.png) center top no-repeat;
+}
+
+header, footer, nav, section
+{
     display: block;
 }
+
+h2
+{
+    margin: 0 0 10px 0;
+}
+
+/* header, nav
+-----------------------------------------------------------*/
+
+header
+{
+    width: 1030px;
+    margin: 0 auto;
+}
+
+header img
+{
+    height: 47px;
+}
+
+header .left
+{
+    float: left;
+    padding: 30px 10px 30px 10px;
+}
+
+header .right
+{
+    float: right;
+    padding: 30px 10px 30px 10px;
+}
+
+nav
+{
+    margin: 0 auto;
+    padding: 0;
+    width: 1030px;
+    height: 48px;
+    background: #005f91; /* Old browsers */
+    background: -moz-linear-gradient(top,  #005f91 0%, #006ba3 27%, #005f91 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#005f91), color-stop(27%,#006ba3), color-stop(100%,#005f91)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #005f91 0%,#006ba3 27%,#005f91 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #005f91 0%,#006ba3 27%,#005f91 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #005f91 0%,#006ba3 27%,#005f91 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #005f91 0%,#006ba3 27%,#005f91 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005f91', endColorstr='#005f91',GradientType=0 ); /* IE6-9 */ /*border-radius: 3px;*/
+    box-shadow: 0px 0px 8px 0px #777;
+}
+
+nav ul
+{
+    margin: 0 0 0 10px;
+    padding: 0;
+    list-style: none;
+    width: 900px;
+    height: 48px;
+}
+
+nav ul li
+{
+    float: left;
+    height: 48px;
+}
+
+nav ul li:hover
+{
+}
+
+nav ul li div
+{
+    display: block;
+    height: 100%;
+}
+
+nav ul li a
+{
+    display: block;
+    color: White;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 12px 28px;
+}
+
+nav ul li:last-child
+{
+    float: left;
+    height: 48px;
+    background: none;
+}
+
+nav ul li:first-child a
+{
+    padding: 12px 28px 12px 20px;
+}
+
+nav ul li:last-child a
+{
+    padding: 12px 20px 12px 28px;
+}
+
+
+/* mainContent
+-----------------------------------------------------------*/
+
+#mainContent
+{
+    width: 1030px;
+    margin: 0 auto;
+    padding: 25px 0px;
+}
+
+#mainContent .leftCulture
+{
+    float: left;
+    width: 210px;
+    padding-top: 14px;
+    margin: 0 15px 0 0;
+}
+
+#mainContent .leftCulture a
+{
+    text-decoration: none !important;
+    color: #232323 !important;
+}
+
+#mainContent .leftCulture table
+{
+    box-shadow: 0px 0px 8px 0px #666;
+    border-top: 3px solid #F29400 !important;
+    margin-bottom: 28px;
+}
+
+#mainContent .leftCulture table tr:first-child
+{
+    font-size: 18px;
+}
+
+#mainContent .leftCulture table tr td p
+{
+    margin: 2px;
+}
+
+#mainContent .leftCulture table tr:nth-child(2) td p
+{
+    font-size: 14px;
+}
+
+
+#mainContent .left
+{
+    float: left;
+    width: 300px;
+    padding-top: 14px;
+}
+
+#mainContent .left img
+{
+    height: 53px;
+}
+
+#mainContent .right
+{
+    float: right;
+}
+
+#mainContent .slider
+{
+    /*float: right;*/
+    top: 1px !important;
+    left: 228px !important;
+}
+
+#mainContent .slider img
+{
+    height: 533px;
+    box-shadow: 1px 1px 10px #444;
+    display: none;
+}
+
+#mainContent .center
+{
+    background: white;
+    padding: 3px 15px;
+    box-shadow: 0px 0px 20px #666;
+}
+
+#mainContent .photogallery
+{
+    background: white;
+    padding: 3px 15px;
+    box-shadow: 0px 0px 20px #666;
+    min-height: 500px;
+}
+
+#mainContent .photogallery img
+{
+    height: 159px;
+    float: left;
+    margin: 5px;
+    border: 0;
+    cursor: pointer;
+    
+    -webkit-transition: all 0.6s;    
+}
+
+.imgSelected
+{
+    -webkit-transform: scale(4.0) !important;
+    /*zoom: 4;*/
+    position: fixed;
+    /*top: 46px;
+    left: 40px;*/
+    top: 439px;
+    left: 534px;
+    
+}
+/* footer
+-----------------------------------------------------------*/
+
+footer
+{
+    width: 988px;
+    height: 43px;
+    margin: 0 auto;
+    background: #043964;
+    color: white;
+    box-shadow: 0px 0px 8px 0px #777;
+    padding: 12px 22px;
+}
+
+footer .footerAdImage
+{
+    float: left;
+}
+
+footer .footerAddress
+{
+    width: 467px;
+    color: White;
+    float: right;
+    font-size: 12px;
+}
+
+/* admin
+-----------------------------------------------------------*/
+
+#adminContent
+{
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+#adminContent h2
+{
+    margin-bottom: 25px;
+    font-weight: normal;
+    font-size: 35px;
+    height: auto;
+    border-bottom: 1px solid silver;
+}
+
+#adminContent a
+{
+    font-size: 16px;
+    color: Black;
+}
+
+#adminContent p
+{
+    margin: 16px 0;
+}
+
+#adminContent .fields
+{
+    box-shadow: 0px 0px 10px 0px #252525;
+    margin: 25px 0;
+    padding: 20px;
+}
+
+#adminContent label
+{
+    font-size: 16px;
+}
+
+#adminContent .fields input[type='text'], input[type='password']
+{
+    width: 200px;
+    height: 26px;
+    border: 1px solid silver;
+    border-radius: 2px;
+    font-size: 17px;
+}
+
+#adminContent .fields select
+{
+    width: 200px;
+    height: 26px; /*border: 1px solid silver;     border-radius: 2px;*/
+    font-size: 17px;
+}
+
+#adminContent button
+{
+    margin: 0 0 0 0;
+    width: 150px;
+    height: 32px;
+    font-size: 16px;
+}
+
+#adminContent input[type='submit']
+{
+    margin: 20px 0 0 0;
+    width: 150px;
+    height: 32px;
+    font-size: 16px;
+}
+
+#adminContent .fields ul
+{
+    line-height: 40px;
+    list-style: square;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+#adminContent .fields ul li
+{
+    border-bottom: 1px solid silver;
+    padding: 0 5px;
+}
+
+#adminContent .fields ul li a
+{
+    float: right;
+    margin-right: 10px;
+}
+
+#adminContent .fields ul li span
+{
+    padding-left: 5px;
+    display: block;
+}
+
+#adminContent .fields ul li span a
+{
+    display: block;
+    text-decoration: none;
+    float: none;
+    margin-right: 0;
+}
+
+#adminContent .fields ul li:hover
+{
+    background: #EEEEEE;
+}
+
+#adminContent .fields ul li:last-child
+{
+    border-bottom: 0px solid silver;
+    height: 44px;
+}
+
+#adminContent #fullscreen
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Optionals 
+----------------------------------------------------------*/
+
+.clr
+{
+    clear: both;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 0;
+    line-height: 0;
+}
+
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
 
-fieldset 
+fieldset
 {
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
 }
 
-legend 
+legend
 {
-    font-size:1.2em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-textarea 
+textarea
 {
     min-height: 75px;
 }
 
-.editor-label 
+.editor-label
 {
     margin: 1em 0 0 0;
 }
 
-.editor-field 
+.editor-field
 {
-    margin:0.5em 0 0 0;
+    margin: 0.5em 0 0 0;
 }
 
 
