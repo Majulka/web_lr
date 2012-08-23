@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="lrModelStoreContainer" CdmEntityContainer="lrEntities">
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="lrModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Culture">
+      <EntityTypeMapping TypeName="lrModel.Culture">
+        <MappingFragment StoreEntitySet="Culture">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Culture1" ColumnName="Culture" />
+          <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Header">
+      <EntityTypeMapping TypeName="lrModel.Header">
+        <MappingFragment StoreEntitySet="Header">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="IsImage" ColumnName="IsImage" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="ImageHref" ColumnName="ImageHref" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeaderClasses">
+      <EntityTypeMapping TypeName="lrModel.HeaderClasses">
+        <MappingFragment StoreEntitySet="HeaderClasses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="lrModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Page" ColumnName="Page" />
+          <ScalarProperty Name="ItemOrder" ColumnName="ItemOrder" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageContentClasses">
+      <EntityTypeMapping TypeName="lrModel.PageContentClasses">
+        <MappingFragment StoreEntitySet="PageContentClasses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageContents">
+      <EntityTypeMapping TypeName="lrModel.PageContents">
+        <MappingFragment StoreEntitySet="PageContents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PageContent" ColumnName="PageContent" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="CssClass" ColumnName="CssClass" />
+          <ScalarProperty Name="ChangeTime" ColumnName="ChangeTime" />
+          <ScalarProperty Name="PageType" ColumnName="PageType" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageContentType">
+      <EntityTypeMapping TypeName="lrModel.PageContentType">
+        <MappingFragment StoreEntitySet="PageContentType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PageType" ColumnName="PageType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageRoute">
+      <EntityTypeMapping TypeName="lrModel.PageRoute">
+        <MappingFragment StoreEntitySet="PageRoute">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PageAddress" ColumnName="PageAddress" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Culture" ColumnName="Culture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="lrModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

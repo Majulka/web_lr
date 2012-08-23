@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="lrModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="lrModelStoreContainer">
+    <EntitySet Name="Contact" EntityType="lrModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Culture" EntityType="lrModel.Store.Culture" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Header" EntityType="lrModel.Store.Header" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HeaderClasses" EntityType="lrModel.Store.HeaderClasses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menu" EntityType="lrModel.Store.Menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PageContentClasses" EntityType="lrModel.Store.PageContentClasses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PageContents" EntityType="lrModel.Store.PageContents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PageContentType" EntityType="lrModel.Store.PageContentType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PageRoute" EntityType="lrModel.Store.PageRoute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="lrModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Header_Culture" Association="lrModel.Store.FK_Header_Culture">
+      <End Role="Culture" EntitySet="Culture" />
+      <End Role="Header" EntitySet="Header" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Header_Header" Association="lrModel.Store.FK_Header_Header">
+      <End Role="HeaderClasses" EntitySet="HeaderClasses" />
+      <End Role="Header" EntitySet="Header" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_PageRoute" Association="lrModel.Store.FK_Menu_PageRoute">
+      <End Role="Culture" EntitySet="Culture" />
+      <End Role="Menu" EntitySet="Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_PageRoute1" Association="lrModel.Store.FK_Menu_PageRoute1">
+      <End Role="PageRoute" EntitySet="PageRoute" />
+      <End Role="Menu" EntitySet="Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageContents_Contact" Association="lrModel.Store.FK_PageContents_Contact">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="PageContents" EntitySet="PageContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageContents_PageContentClasses" Association="lrModel.Store.FK_PageContents_PageContentClasses">
+      <End Role="PageContentClasses" EntitySet="PageContentClasses" />
+      <End Role="PageContents" EntitySet="PageContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageContents_PageContentType" Association="lrModel.Store.FK_PageContents_PageContentType">
+      <End Role="PageContentType" EntitySet="PageContentType" />
+      <End Role="PageContents" EntitySet="PageContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageContents_PageRoute" Association="lrModel.Store.FK_PageContents_PageRoute">
+      <End Role="PageRoute" EntitySet="PageRoute" />
+      <End Role="PageContents" EntitySet="PageContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageRoute_Culture" Association="lrModel.Store.FK_PageRoute_Culture">
+      <End Role="Culture" EntitySet="Culture" />
+      <End Role="PageRoute" EntitySet="PageRoute" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="12" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Culture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Culture" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="CultureName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Header">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="varchar" MaxLength="300" />
+    <Property Name="IsImage" Type="bit" Nullable="false" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+    <Property Name="ImageHref" Type="varchar" MaxLength="500" />
+    <Property Name="Culture" Type="int" Nullable="false" />
+    <Property Name="Class" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HeaderClasses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ClassName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Page" Type="int" Nullable="false" />
+    <Property Name="ItemOrder" Type="int" />
+    <Property Name="Culture" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PageContentClasses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ClassName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PageContents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PageContent" Type="varchar(max)" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="CssClass" Type="int" Nullable="false" />
+    <Property Name="ChangeTime" Type="datetime" Nullable="false" />
+    <Property Name="PageType" Type="int" Nullable="false" />
+    <Property Name="Contact" Type="int" />
+  </EntityType>
+  <EntityType Name="PageContentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PageType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PageRoute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PageAddress" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="PageName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Culture" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Header_Culture">
+    <End Role="Culture" Type="lrModel.Store.Culture" Multiplicity="1" />
+    <End Role="Header" Type="lrModel.Store.Header" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Header">
+        <PropertyRef Name="Culture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Header_Header">
+    <End Role="HeaderClasses" Type="lrModel.Store.HeaderClasses" Multiplicity="1" />
+    <End Role="Header" Type="lrModel.Store.Header" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeaderClasses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Header">
+        <PropertyRef Name="Class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_PageRoute">
+    <End Role="Culture" Type="lrModel.Store.Culture" Multiplicity="1" />
+    <End Role="Menu" Type="lrModel.Store.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="Culture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_PageRoute1">
+    <End Role="PageRoute" Type="lrModel.Store.PageRoute" Multiplicity="1" />
+    <End Role="Menu" Type="lrModel.Store.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageRoute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="Page" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageContents_Contact">
+    <End Role="Contact" Type="lrModel.Store.Contact" Multiplicity="0..1" />
+    <End Role="PageContents" Type="lrModel.Store.PageContents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageContents">
+        <PropertyRef Name="Contact" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageContents_PageContentClasses">
+    <End Role="PageContentClasses" Type="lrModel.Store.PageContentClasses" Multiplicity="1" />
+    <End Role="PageContents" Type="lrModel.Store.PageContents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageContentClasses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageContents">
+        <PropertyRef Name="CssClass" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageContents_PageContentType">
+    <End Role="PageContentType" Type="lrModel.Store.PageContentType" Multiplicity="1" />
+    <End Role="PageContents" Type="lrModel.Store.PageContents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageContentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageContents">
+        <PropertyRef Name="PageType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageContents_PageRoute">
+    <End Role="PageRoute" Type="lrModel.Store.PageRoute" Multiplicity="1" />
+    <End Role="PageContents" Type="lrModel.Store.PageContents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageRoute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageContents">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageRoute_Culture">
+    <End Role="Culture" Type="lrModel.Store.Culture" Multiplicity="1" />
+    <End Role="PageRoute" Type="lrModel.Store.PageRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageRoute">
+        <PropertyRef Name="Culture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
