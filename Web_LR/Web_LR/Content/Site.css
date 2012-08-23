@@ -13,7 +13,7 @@ body
     font-size: .85em; /*font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;*/
     font-family: "Segoe UI" , Frutiger, "Frutiger Linotype" , "Dejavu Sans" , "Helvetica Neue" , Verdana, Arial, sans-serif;
     color: #232323;
-    background: #FFFFFF url(images/bcg_top.png) top left no-repeat;
+    background: #a5a5a5 url(images/bcg_top.png) top left no-repeat;
 }
 
 header, footer, nav, section
@@ -43,13 +43,13 @@ header img
 header .left
 {
     float: left;
-    padding: 10px 10px 0px 30px;
+    padding: 20px 10px 0px 50px;
 }
 
 header .right
 {
     float: right;
-    padding: 10px 30px 5px 10px;
+    padding: 10px 50px 5px 10px;
 }
 header .right img
 {
@@ -117,15 +117,19 @@ nav ul li a
 
 #mainContent
 {
-    width: 1030px;
+    width: 1000px;
     margin: 0 auto;
+    background-color:#ffffff;
+    margin-top:55px;
     padding: 25px 0px;
+    box-shadow: 1px 1px 10px #444;
 }
 
+/*
 #mainContent .leftCulture
 {
     float: left;
-    width: 210px;
+    width: 0px;
     padding-top: 14px;
     margin: 0 15px 0 0;
 }
@@ -157,7 +161,7 @@ nav ul li a
 {
     font-size: 14px;
 }
-
+*/
 
 #mainContent .left
 {
@@ -179,13 +183,13 @@ nav ul li a
 #mainContent .slider
 {
     /*float: right;*/
-    top: 1px !important;
-    left: 228px !important;
+    position:relative;
+    left:125px;
 }
 
 #mainContent .slider img
 {
-    height: 533px;
+    height: 500px;
     box-shadow: 1px 1px 10px #444;
     display: none;
 }
@@ -235,7 +239,7 @@ footer
     width: 988px;
     height: 43px;
     margin: 0 auto;
-    background: #043964;
+    background: #a00b25;
     color: white;
     box-shadow: 0px 0px 8px 0px #777;
     padding: 12px 22px;

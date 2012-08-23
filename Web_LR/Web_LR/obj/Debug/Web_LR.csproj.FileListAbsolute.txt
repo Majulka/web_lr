@@ -1,0 +1,10 @@
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\bin\Web_LR.dll
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\bin\Web_LR.pdb
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\bin\EntityFramework.dll
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\bin\Omu.Awesome.Mvc.dll
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\bin\Telerik.Web.Mvc.dll
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\bin\EntityFramework.xml
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\bin\Telerik.Web.Mvc.xml
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\obj\Debug\ResolveAssemblyReference.cache
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\obj\Debug\Web_LR.dll
+D:\Práce\MAKI\LR-dance\LR-web\trunk\Web_LR\Web_LR\obj\Debug\Web_LR.pdb
